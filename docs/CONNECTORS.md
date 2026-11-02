@@ -32,3 +32,13 @@ Configure an MCP client using mcp-config.example.json; replace the example path 
 
 ## Safety
 Issue creation and messaging tools write to external services. Review tool arguments before use. The server does not print tokens. Never commit .env, webhook URLs, private keys, or customer data.
+
+## Advanced platform features
+
+- OAuth2Manager in src/oauth_manager.py supports HTTPS token endpoints, client-credentials and refresh-token grants, in-memory caching, and explicit clearing. Configure PREFIX_TOKEN_URL, PREFIX_CLIENT_ID, PREFIX_CLIENT_SECRET, and optional PREFIX_SCOPE / PREFIX_AUDIENCE. It is a generic helper; provider-specific consent and callback flows must be implemented per provider.
+- Connector discovery is exposed as MCP resource connectors://catalog.
+- Setup notes are exposed as connectors://setup.
+- MCP prompts: plan_connector and review_tool_call.
+- Optional LangChain and CrewAI adapters are in src/adapters/. Install requirements-optional.txt only when needed.
+- Docker image command: docker build -t ai-agent-connectors-plugins .
+- GitHub Actions runs compilation and unit tests on pushes and pull requests.

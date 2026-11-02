@@ -1,0 +1,2 @@
+langchain-core>=0.3
+crewai>=0.100

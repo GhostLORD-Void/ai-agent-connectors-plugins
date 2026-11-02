@@ -30,3 +30,12 @@ See CONTRIBUTING.md. Mark connector status as planned, experimental, stable, or 
 
 ## License
 MIT.
+
+## Advanced build
+- OAuth 2.0 helper: src/oauth_manager.py (generic client-credentials / refresh-token flow, in-memory cache).
+- Dynamic connector discovery: MCP resource connectors://catalog.
+- MCP resources: connectors://catalog and connectors://setup.
+- MCP prompts: plan_connector and review_tool_call.
+- Optional LangChain / CrewAI adapters: src/adapters/ (install requirements-optional.txt).
+- Docker image: docker build -t ai-agent-connectors-plugins .
+- CI: GitHub Actions workflow in .github/workflows/ci.yml.
