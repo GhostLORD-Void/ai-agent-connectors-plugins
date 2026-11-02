@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "ai-agent-connectors-plugins": {
+      "command": "python",
+      "args": ["ABSOLUTE_PATH_TO_REPO/src/mcp_server.py"],
+      "env": {
+        "GITHUB_TOKEN": "set-in-client-environment",
+        "GITLAB_TOKEN": "set-in-client-environment",
+        "SLACK_BOT_TOKEN": "set-in-client-environment",
+        "NOTION_TOKEN": "set-in-client-environment",
+        "JIRA_BASE_URL": "https://your-domain.atlassian.net",
+        "JIRA_EMAIL": "set-in-client-environment",
+        "JIRA_API_TOKEN": "set-in-client-environment",
+        "LINEAR_API_KEY": "set-in-client-environment",
+        "OPENAI_API_KEY": "set-in-client-environment",
+        "GEMINI_API_KEY": "set-in-client-environment",
+        "TAVILY_API_KEY": "set-in-client-environment"
+      }
+    }
+  }
+}

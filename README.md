@@ -1,50 +1,32 @@
 # AI Agent Connectors & Plugins
 
-An open, community-driven hub for building AI agents with reusable connectors, tools, plugins, MCP servers, and provider integrations.
+Open community hub for reusable AI-agent connectors, tools, plugins, and MCP servers.
 
-> **Project status:** starter repository. The catalog is a roadmap and contribution index; an entry does not imply that an integration is implemented, tested, or officially supported.
+## Working starter integrations
 
-## Goals
-- Connect agents to models, APIs, SaaS apps, databases, files, and developer tools.
-- Provide consistent connector conventions, examples, tests, and security guidance.
-- Support multiple agent frameworks and tool protocols without vendor lock-in.
-- Track implementation status transparently.
+10 service integrations are implemented and exposed as 11 MCP tools: GitHub (repository listing and issue creation), GitLab (project listing), Slack (message send), Discord (webhook send), Notion (search), Jira (issue creation), Linear (issue creation), OpenAI (chat completion), Google Gemini (content generation), and Tavily (web search).
 
-## Ecosystem map
-
-| Area | Examples to explore |
-|---|---|
-| Model providers | OpenAI, Anthropic, Google Gemini, AWS Bedrock, Azure AI, Mistral, Cohere, Groq, Ollama |
-| Agent frameworks | LangChain, LangGraph, LlamaIndex, CrewAI, AutoGen, Semantic Kernel, PydanticAI, Haystack |
-| Tool protocols | Model Context Protocol (MCP), OpenAPI tools, function/tool calling |
-| Developer platforms | GitHub, GitLab, Jira, Linear, Slack, Discord |
-| Knowledge & productivity | Notion, Google Drive, Microsoft 365, Confluence |
-| Data & storage | PostgreSQL, MySQL, SQLite, Redis, MongoDB, Elasticsearch, S3 |
-| Vector search | pgvector, Pinecone, Weaviate, Qdrant, Chroma, Milvus |
-| Web & research | Browser automation, search APIs, crawling, document extraction |
-| Observability | OpenTelemetry, Langfuse, LangSmith, Arize Phoenix |
-| Automation | n8n, Zapier, Make, webhooks, queues |
-
-See catalog/ecosystem.json for the machine-readable starter catalog.
-
-## Repository layout
-- catalog/ — ecosystem index and integration metadata.
-- connectors/ — implementations, grouped by provider or service.
-- examples/ — end-to-end agent examples.
-- templates/ — connector and MCP server starter templates.
-
-## Connector conventions
-Each connector should document supported operations, authentication and minimum scopes, environment variables (names only), rate limits, pagination, retries, data handling, setup, examples, and tests.
-Recommended status labels: planned, experimental, stable, deprecated.
+**Status:** API clients, MCP stdio server, and local mocked tests are included. Live API calls require your credentials and have not yet been verified against your accounts.
 
 ## Quick start
-This repository currently contains the catalog and contribution scaffolding. Pick a service in the catalog, create a connector under connectors/, and follow templates/connector/README.md.
+Run: python src/mcp_server.py
+No third-party Python packages are required. Configure your MCP client with mcp-config.example.json. See docs/CONNECTORS.md for setup and permissions.
+
+## Layout
+- src/connectors.py — API clients and tool registry.
+- src/mcp_server.py — MCP JSON-RPC stdio server.
+- tests/ — local mocked tests.
+- catalog/ — ecosystem index.
+- templates/ — connector template.
+
+## Test
+Run: python -m unittest discover -s tests -v
 
 ## Security
-Never commit API keys, OAuth tokens, private keys, .env files, or customer data. Request narrow permissions. Treat tool output and retrieved documents as untrusted input. Validate arguments and constrain file, shell, network, and database access. See SECURITY.md.
+Never commit tokens, webhook URLs, private keys, .env, or customer data. Use least-privilege credentials. Write tools perform external actions. Read SECURITY.md.
 
 ## Contributing
-Issues and pull requests are welcome. Read CONTRIBUTING.md and use the connector template.
+See CONTRIBUTING.md. Mark connector status as planned, experimental, stable, or deprecated.
 
 ## License
-MIT — see LICENSE.
+MIT.
