@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "project": "AI Agent Connectors & Plugins",
+  "notice": "Starter discovery catalog only. Entries are not claims of implementation, endorsement, or official support.",
+  "categories": [
+    {"name":"model-providers","items":["OpenAI","Anthropic","Google Gemini","AWS Bedrock","Azure AI","Mistral","Cohere","Groq","Ollama"]},
+    {"name":"agent-frameworks","items":["LangChain","LangGraph","LlamaIndex","CrewAI","AutoGen","Semantic Kernel","PydanticAI","Haystack"]},
+    {"name":"tool-protocols","items":["Model Context Protocol (MCP)","OpenAPI tools","JSON Schema tool calling"]},
+    {"name":"developer-platforms","items":["GitHub","GitLab","Jira","Linear","Slack","Discord"]},
+    {"name":"knowledge-productivity","items":["Notion","Google Drive","Microsoft 365","Confluence"]},
+    {"name":"databases-storage","items":["PostgreSQL","MySQL","SQLite","Redis","MongoDB","Elasticsearch","Amazon S3"]},
+    {"name":"vector-search","items":["pgvector","Pinecone","Weaviate","Qdrant","Chroma","Milvus"]},
+    {"name":"web-research","items":["Browser automation","Search APIs","Web crawling","Document extraction"]},
+    {"name":"observability","items":["OpenTelemetry","Langfuse","LangSmith","Arize Phoenix"]},
+    {"name":"automation","items":["n8n","Zapier","Make","Webhooks","Message queues"]}
+  ]
+}
